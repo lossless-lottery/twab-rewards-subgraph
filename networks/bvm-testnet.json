@@ -1,0 +1,7 @@
+{
+    "network": "bvm-testnet",
+    "TWABRewards": {
+      "address": "0xd1e4553673B502E3a3aE23e680A243f1Ac2aA0E2",
+      "startBlock": "1324020"
+    }
+  }
