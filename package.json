@@ -9,10 +9,10 @@
     "format:file": "prettier --config .prettierrc --write",
     "prepare:bvm-testnet": "mustache networks/bvm-testnet.json subgraph.template.yaml subgraph.bvm-testnet.yaml",
     "gen:bvm-testnet": "graph codegen subgraph.bvm-testnet.yaml",
-    "deploy:bvm-testnet": "graph deploy --product hosted-service --node http://139.180.132.39:8020/ --ipfs http://139.180.132.39:5001/ bitlot/bvm-testnet-twab-rewards subgraph.bvm-testnet.yaml",
+    "deploy:bvm-testnet": "graph deploy --product hosted-service --node http://host:8020/ --ipfs http://host:5001/ bitlot/bvm-testnet-twab-rewards subgraph.bvm-testnet.yaml",
     "all-bvm-testnet": "yarn clean && yarn prepare:bvm-testnet && yarn gen:bvm-testnet && yarn deploy:bvm-testnet",
     "build:bvm-testnet": "graph build subgraph.bvm-testnet.yaml",
-    "auth": "graph auth http://139.180.132.39:8020/",
+    "auth": "graph auth http://host:8020/",
     "tag-release": "PACKAGE_VERSION=$(./scripts/package-version.sh) && git tag -ae v$PACKAGE_VERSION && git push --tags",
     "test": "yarn clean && yarn prepare:bvm-testnet && yarn gen:bvm-testnet && cp subgraph.bvm-testnet.yaml subgraph.yaml && graph test"
   },
